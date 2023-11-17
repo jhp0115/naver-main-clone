@@ -71,6 +71,9 @@
         --color_dic: #031f5f;
         --color_dic_rgb: 3, 31, 95;
       }
+      * {
+        box-sizing: border-box;
+      }
       html,
       body {
         margin: 0;
@@ -88,17 +91,23 @@
         position: relative;
         text-align: left;
       }
-      #header-hamburger {
-        position: absolute;
+      #header-hamburger,
+      #header-naverpay,
+      #header-notice,
+      #header-talk {
         top: 18px;
-        left: -10px;
-        display: inline-block;
         padding: 10px;
+        position: absolute;
+        display: inline-block;
         background: none;
         border: none;
         cursor: pointer;
       }
-      #header-hamburger:hover::before {
+
+      #header-hamburger:hover::before,
+      #header-naverpay:hover::before,
+      #header-talk:hover::before,
+      #header-notice:hover::before {
         position: absolute;
         content: "";
         left: 1px;
@@ -108,7 +117,11 @@
         background-color: var(--color_option_bg);
         border-radius: 50%;
       }
-      #header-hamburger > div {
+
+      #header-hamburger > div,
+      #header-naverpay > div,
+      #header-talk > div,
+      #header-notice > div {
         position: relative;
         z-index: -1px;
         width: 26px;
@@ -118,6 +131,42 @@
         background-position: -82px -329px;
         background-repeat: no-repeat;
       }
+
+      #header-hamburger {
+        top: 18px;
+        left: -10px;
+      }
+      #header-hamburger > div {
+        background-position: -82px -329px;
+      }
+
+      #header-naverpay {
+        top: 18px;
+        left: 43px;
+        padding: 7px 7px;
+      }
+      #header-naverpay > div {
+        width: 32px;
+        height: 32px;
+        background-position: -295px -177px;
+      }
+
+      #header-talk {
+        top: 18px;
+        right: 40px;
+      }
+      #header-talk > div {
+        background-position: -190px -329px;
+      }
+
+      #header-notice {
+        top: 18px;
+        right: -10px;
+      }
+      #header-notice > div {
+        background-position: -136px -329px;
+      }
+
       #main {
         height: 2000px;
       }
@@ -139,6 +188,24 @@
             <!-- ::before -->
             <div></div>
             <span class="blind">확장 영역</span>
+            <!-- ::after -->
+          </button>
+          <button id="header-naverpay">
+            <!-- ::before -->
+            <div></div>
+            <span class="blind">네이버 페이</span>
+            <!-- ::after -->
+          </button>
+          <button id="header-talk">
+            <!-- ::before -->
+            <div></div>
+            <span class="blind">토크</span>
+            <!-- ::after -->
+          </button>
+          <button id="header-notice">
+            <!-- ::before -->
+            <div></div>
+            <span class="blind">알림</span>
             <!-- ::after -->
           </button>
         </div>
